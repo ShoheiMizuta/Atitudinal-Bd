@@ -1,0 +1,66 @@
+Exercício 1:
+
+CREATE TABLE musics(
+music_way VARCHAR(15) PRIMARY KEY,
+title VARCHAR(20) NOT NULL,
+duration TIME NOT NULL,
+post_day DATE NOT NULL,
+singer VARCHAR(40) REFERENCES writers(name),
+songwriter VARCHAR(40) NOT NULL writers(name),
+poster BYTEA,
+genre VARCHAR(15) NOT NULL
+);
+
+
+Exercício 2:
+
+CREATE TABLE writers(
+code UUID PRIMARY KEY,
+name VARCHAR(40) NOT NULL,
+birth_date DATE NOT NULL,
+death_date DATE NOT NULL,
+type VARCHAR(20) NOT NULL,
+biography TEXT NOT NULL,
+best_song VARCHAR(20) NOT NULL
+);
+
+
+Exercício 3:
+
+CREATE TABLE usuários(
+  email VARACHAR(45) RIMARY KEY NOT NULL UNIQUE,
+  senha VARCHAR(20) NOT NULL,
+  nome completo TEXT NOT NULL,
+  idade INT NOT NULL,
+  gêneros_preferidos TEXT NOT NULL,
+  criação_perfil TIMESTAMP NOT NULL,
+  ultimo_acesso  TIMESTAMP NOT NULL,
+  celular CARACTER VARYING(14) NOT NULL UNIQUE,
+  plano TEXT NOT NULL
+)
+
+
+Exercício 4:
+Contidos na tabela do exercício 1:
+"[...]
+singer VARCHAR(40) REFERENCES writers(name),
+songwriter VARCHAR(40) NOT NULL writers(name),
+[...]"
+
+
+
+Exercício 5:
+
+INSERT INTO musics VALUES(986,'Old Town Road',2:38,19-07-2019,'Lil Nas X','Atticus Ross',[binary data],'country rap');
+INSERT INTO musics VALUES(613,'Ocean Eyes',4:58,21-04-2020,'Billie Eilish','William Even',[binary data],'music pop');
+INSERT INTO musics VALUES (634,'Bones',6:14,21-05-2022,'Imagine Dragons','Daniel Coulter Reynolds',[binary data],'pop rock');
+
+INSERT INTO writers VALUES (550e8400-e29b-41d4-a716-446655440000,'Montero Lamar Hill',09-04-1999,00-00-0000,'cantor(a)','Lil Nas X é um cantos jovem de 25 anos','Old Town Road');
+INSERT INTO writers VALUES (875f1988-e29b-41d4-u841-4415165165500,'Billie Eilish',29-05-1997,00-00-0000,'cantor(a)','Billie Eilish é uma cantora de 27 anos','Ocean Eyes');
+
+INSERT INTO writers VALUES (875f1988-e29b-41d4-u841-4415165168789,'William Even',03-07-1968,00-00-0000,'compositor','William Even é um compostior de 67 anos','Old Town Road');
+INSERT INTO writers VALUES (875f1988-e64b-41d4-u841-8462044925625,'Atticus Ross',06-04-1986,00-00-0000,'compositor','Atticus Ross é um compostior de 56 anos','Ocean Eyes');
+INSERT INTO writers VALUES(2343h344-e34b-41d4-u841-8462044925625,'Daniel Coulter Reynolds',06-08-1978,00-00-0000,'compositor','Daniel Coulter Reynolds é um compostior de 36 anos','Imagine Dragons');
+
+INSERT INTO usuarios VALUES('eunaosouojorge@gmail.com',023048,'Arthur Gaspar Dizarro',16,'musica pop',18-05-2021 18:00,18-07-2024 3:58,199835900636,'basico');
+INSERT INTO usuarios VALUES('eutambemnaosouojorge@gmail.com',84651,'João Pedro de Souza Figueiredo',17,'coutry rap',30-07-2023 17:12,10-04-2024 15:47,1998566521,'premium');
